@@ -188,48 +188,56 @@
                         <div class="skill-bar-bg">
                             <div class="skill-bar" data-skill="95"></div>
                         </div>
+                        <div class="skill-percentage"></div>
                     </div>
                     <div class="skill">
                         <div class="skill-label">Python</div>
                         <div class="skill-bar-bg">
                             <div class="skill-bar" data-skill="73"></div>
                         </div>
+                        <div class="skill-percentage"></div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-label">Python</div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar" data-skill="73"></div>
+                        </div>
+                        <div class="skill-percentage"></div>
                     </div>
                     <div class="skill">
                         <div class="skill-label">Excel</div>
                         <div class="skill-bar-bg">
                             <div class="skill-bar" data-skill="84"></div>
                         </div>
+                        <div class="skill-percentage"></div>
                     </div>
                     <div class="skill">
                         <div class="skill-label">Tableau</div>
                         <div class="skill-bar-bg">
                             <div class="skill-bar" data-skill="88"></div>
                         </div>
+                        <div class="skill-percentage"></div>
                     </div>
                     <div class="skill">
                         <div class="skill-label">Power BI</div>
                         <div class="skill-bar-bg">
                             <div class="skill-bar" data-skill="72"></div>
                         </div>
+                        <div class="skill-percentage"></div>
                     </div>
                     <div class="skill">
                         <div class="skill-label">Data Visualization</div>
                         <div class="skill-bar-bg">
                             <div class="skill-bar" data-skill="85"></div>
                         </div>
+                        <div class="skill-percentage"></div>
                     </div>
                     <div class="skill">
-                        <div class="skill-label">Power Query</div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar" data-skill="60"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-label">Pandas</div>
+                        <div class="skill-label">Python Data Libraries</div>
                         <div class="skill-bar-bg">
                             <div class="skill-bar" data-skill="70"></div>
                         </div>
+                        <div class="skill-percentage"></div>
                     </div>
                 </div>
                 <div class="skills-col">
@@ -238,48 +246,42 @@
                         <div class="skill-bar-bg">
                             <div class="skill-bar" data-skill="95"></div>
                         </div>
+                        <div class="skill-percentage"></div>
                     </div>
                     <div class="skill">
                         <div class="skill-label">HTML/CSS</div>
                         <div class="skill-bar-bg">
                             <div class="skill-bar" data-skill="95"></div>
                         </div>
+                        <div class="skill-percentage"></div>
                     </div>
                     <div class="skill">
                         <div class="skill-label">Database Design</div>
                         <div class="skill-bar-bg">
                             <div class="skill-bar" data-skill="90"></div>
                         </div>
+                        <div class="skill-percentage"></div>
                     </div>
                     <div class="skill">
                         <div class="skill-label">AWS</div>
                         <div class="skill-bar-bg">
                             <div class="skill-bar" data-skill="77"></div>
                         </div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-label">Matplotlib</div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar" data-skill="60"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-label">Seaborn</div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar" data-skill="55"></div>
-                        </div>
+                        <div class="skill-percentage"></div>
                     </div>
                     <div class="skill">
                         <div class="skill-label">Plotly</div>
                         <div class="skill-bar-bg">
                             <div class="skill-bar" data-skill="75"></div>
                         </div>
+                        <div class="skill-percentage"></div>
                     </div>
                     <div class="skill">
                         <div class="skill-label">ETL Processes</div>
                         <div class="skill-bar-bg">
                             <div class="skill-bar" data-skill="74"></div>
                         </div>
+                        <div class="skill-percentage"></div>
                     </div>
                 </div>
             </div>
@@ -404,14 +406,13 @@
                     <img src="images/project4.png" alt="Project 4" />
                     <b>Weather & Car Accidents Analysis</b>
                     <p>Merged Datasets and Analyzed the correlation between car accidents and weather conditions using
-                        Python, Pandas and Plotly, uncovering insightful trends and relationships.</p>
+                        Python data libraries and Plotly, uncovering insightful trends and relationships.</p>
                     <div class="project-skills">
                         <span class="project-skill-pill">Python</span>
                         <span class="project-skill-pill">Data Cleaning</span>
                         <span class="project-skill-pill">Plotly</span>
                         <span class="project-skill-pill">NumPy</span>
-                        <span class="project-skill-pill">Pandas</span>
-                        <span class="project-skill-pill">Matplotlib</span>
+                        <span class="project-skill-pill">Python Data Libraries</span>
                         <span class="project-skill-pill">Data Visualization</span>
                     </div>
                     <div class="project-links">
@@ -578,6 +579,13 @@
             skills.forEach(bar => {
                 const value = bar.getAttribute('data-skill');
                 bar.style.width = value + '%';
+
+                // Update percentage display
+                const skillContainer = bar.closest('.skill');
+                const percentageElement = skillContainer.querySelector('.skill-percentage');
+                if (percentageElement) {
+                    percentageElement.textContent = value + '%';
+                }
             });
         }
         function isInViewportStrict(el) {

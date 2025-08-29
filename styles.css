@@ -125,6 +125,20 @@ body.light .skill-bar-bg {
   border: 1px solid var(--border);
 }
 
+body.light .skill {
+  border-color: rgba(49, 130, 206, 0.3);
+  background: var(--card);
+}
+
+body.light .skill:hover {
+  border-color: rgba(49, 130, 206, 0.6);
+  box-shadow: 0 4px 16px rgba(49, 130, 206, 0.15);
+}
+
+body.light .skill-percentage {
+  color: var(--accent);
+}
+
 body.light .section-divider {
   background: rgba(0, 0, 0, 0.1);
 }
@@ -1073,6 +1087,20 @@ section#experience {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  padding: 1rem;
+  border: 2px solid rgba(110, 193, 255, 0.3);
+  border-radius: 12px;
+  background: var(--card);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill:hover {
+  border-color: rgba(110, 193, 255, 0.6);
+  box-shadow: 0 4px 16px rgba(110, 193, 255, 0.15);
+  transform: translateY(-2px);
 }
 .skill-label {
   font-weight: 600;
@@ -1101,6 +1129,27 @@ section#experience {
   position: absolute;
   left: 0;
   top: 0;
+}
+
+.skill-percentage {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-align: right;
+  margin-top: 0.3rem;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards 1.2s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @media (max-width: 700px) {
   .skills-list {
@@ -1640,6 +1689,16 @@ nav a:not(.resume-link) {
   .skill-bar {
     height: 100% !important;
     border-radius: 8px !important;
+  }
+
+  .skill {
+    padding: 0.8rem !important;
+    border-radius: 10px !important;
+  }
+
+  .skill-percentage {
+    font-size: 0.8rem !important;
+    margin-top: 0.4rem !important;
   }
 }
 
