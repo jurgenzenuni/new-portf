@@ -624,22 +624,26 @@
         function handleMobileNav() {
             const header = document.querySelector('header');
             const mobileNav = document.querySelector('.mobile-bottom-nav');
-            if (window.innerWidth <= 430) {
+
+            // More robust mobile detection
+            const isMobile = window.innerWidth <= 768 ||
+                (window.innerWidth <= 1024 && window.innerHeight > window.innerWidth) ||
+                /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+            if (isMobile) {
                 if (header) header.style.display = 'none';
                 if (mobileNav) {
                     mobileNav.style.display = 'flex';
-                    // Remove inline positioning to let CSS handle it
-                    // mobileNav.style.position = 'fixed';
-                    // mobileNav.style.bottom = '0';
-                    // mobileNav.style.left = '0';
-                    // mobileNav.style.right = '0';
-                    // mobileNav.style.zIndex = '9999';
+                    mobileNav.classList.add('mobile-active');
                 }
                 document.body.style.overflowX = 'hidden';
                 document.body.style.paddingBottom = '80px';
             } else {
                 if (header) header.style.display = '';
-                if (mobileNav) mobileNav.style.display = 'none';
+                if (mobileNav) {
+                    mobileNav.style.display = 'none';
+                    mobileNav.classList.remove('mobile-active');
+                }
                 document.body.style.overflowX = '';
                 document.body.style.paddingBottom = '';
             }
