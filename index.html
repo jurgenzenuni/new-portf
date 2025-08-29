@@ -657,40 +657,7 @@
             }
         }
         window.addEventListener('resize', handleMobileNav);
-        window.addEventListener('DOMContentLoaded', handleMobileNav);
-
-        // Safari mobile navbar stabilization
-        function stabilizeMobileNav() {
-            const mobileNav = document.querySelector('.mobile-bottom-nav');
-            if (mobileNav && window.innerWidth <= 768) {
-                // Force repaint to prevent Safari shifting
-                mobileNav.style.display = 'none';
-                mobileNav.offsetHeight; // Trigger reflow
-                mobileNav.style.display = 'flex';
-
-                // Add temporary class to force hardware acceleration
-                mobileNav.classList.add('stabilizing');
-                setTimeout(() => {
-                    mobileNav.classList.remove('stabilizing');
-                }, 100);
-            }
-        }
-
-        // Stabilize navbar on scroll (Safari mobile fix)
-        let scrollTimeout;
-        window.addEventListener('scroll', function () {
-            if (window.innerWidth <= 768) {
-                clearTimeout(scrollTimeout);
-                scrollTimeout = setTimeout(stabilizeMobileNav, 100);
-            }
-        });
-
-        // Handle orientation changes (Safari mobile fix)
-        window.addEventListener('orientationchange', function () {
-            setTimeout(stabilizeMobileNav, 200);
-        });
-
-        // Typing animation for hero name
+        window.addEventListener('DOMContentLoaded', handleMobileNav);        // Typing animation for hero name
         document.addEventListener("DOMContentLoaded", function () {
             const name = "Jurgen Zenuni";
             const target = document.getElementById("typed-name");
