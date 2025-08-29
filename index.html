@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Jurgen Zenuni | Data Sorcerer Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link
@@ -293,7 +293,8 @@
                     <img src="images/wallifyai.png" alt="Project 1" />
                     <b>Wallify</b>
                     <p>Wallify is a full-stack Django application that allows users to share and discover wallpapers.
-                        With features like uploading images, following other users, and generating AI images using Seedream3.
+                        With features like uploading images, following other users, and generating AI images using
+                        Seedream3.
                     </p>
                     <div class="project-skills">
                         <span class="project-skill-pill">Python</span>
@@ -315,8 +316,8 @@
                             </span>
                             View
                         </a>
-                        <a class="hero-link-btn" href="https://github.com/jurgenzenuni/wall-application-OS" target="_blank"
-                            title="GitHub">
+                        <a class="hero-link-btn" href="https://github.com/jurgenzenuni/wall-application-OS"
+                            target="_blank" title="GitHub">
                             <span class="hero-link-icon rotate">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -627,11 +628,12 @@
                 if (header) header.style.display = 'none';
                 if (mobileNav) {
                     mobileNav.style.display = 'flex';
-                    mobileNav.style.position = 'fixed';
-                    mobileNav.style.bottom = '0';
-                    mobileNav.style.left = '0';
-                    mobileNav.style.right = '0';
-                    mobileNav.style.zIndex = '9999';
+                    // Remove inline positioning to let CSS handle it
+                    // mobileNav.style.position = 'fixed';
+                    // mobileNav.style.bottom = '0';
+                    // mobileNav.style.left = '0';
+                    // mobileNav.style.right = '0';
+                    // mobileNav.style.zIndex = '9999';
                 }
                 document.body.style.overflowX = 'hidden';
                 document.body.style.paddingBottom = '80px';
